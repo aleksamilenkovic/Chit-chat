@@ -1,0 +1,67 @@
+#menu{
+	-fx-background-color: #437db2;
+}
+#group{
+    -fx-padding: 10px 10px;
+}
+#chat{
+    -fx-background-color: gray;
+}
+
+.button {
+    -fx-opacity: 1.0;
+}
+
+.button:hover {
+    -fx-opacity: 0.6;
+}
+
+
+
+.vbox {
+    -fx-border-color: #2e8b57;
+    -fx-border-width: 2px;
+    -fx-padding: 10;
+    -fx-spacing: 8;
+}
+
+
+
+
+
+.list-cell {
+    -fx-cell-size: 50 ;
+    -fx-animated: true;
+    -fx-padding: 1px;
+}
+
+.list-cell:hover{
+    -fx-background-color: #dbdbdb;
+}
+
+.list-view {
+    -fx-border-image-width: 0;
+}
+
+#statusList {
+    -fx-box-border: transparent;
+}
+
+#userList {
+    -fx-box-border: transparent;
+}
+
+#listHbox {
+    -fx-background-color: #d5d5d5;
+    -fx-padding: 0.2;
+    -fx-spacing: -2;
+}
+
+#onlineUsersHbox {
+    -fx-border-color: #d5d5d5;
+    -fx-border-width: 1px;
+    -fx-padding: 0.2;
+    -fx-spacing: -2;
+}
+
+

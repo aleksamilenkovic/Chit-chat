@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="parent" prefHeight="500.0" prefWidth="400.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.controllers.LoginController">
+    <Label layoutX="101.0" layoutY="92.0" text="Login and start to Chit-Chat !">
+        <font>
+          <Font name="System Bold" size="18.0" />
+        </font>
+        <textFill>
+            <LinearGradient endX="0.6523809523809522" endY="1.0" startX="0.5142857142857143">
+                <stops>
+                    <Stop color="#b2b2b2" />
+                    <Stop color="#b2b2b2" offset="0.007662835249042145" />
+                    <Stop color="#6eadfa" offset="0.6130268199233708" />
+                    <Stop color="#329cff" offset="0.9846743295019157" />
+                    <Stop color="#329cff" offset="1.0" />
+                </stops>
+            </LinearGradient>
+        </textFill>
+    </Label>
+    <JFXTextField fx:id="usernameField" alignment="CENTER" labelFloat="true" layoutX="133.0" layoutY="171.0" onKeyReleased="#handleEmptyFields" opacity="0.43" promptText="Username" />
+    <JFXPasswordField fx:id="passwordField" alignment="CENTER" labelFloat="true" layoutX="133.0" layoutY="238.0" onKeyReleased="#handleEmptyFields" opacity="0.54" promptText="Password" />
+
+    <JFXButton id="loginButton" fx:id="login_button" disable="true" layoutX="101.0" layoutY="317.0" onAction="#login" prefHeight="40.0" prefWidth="85.0" text="Login" />
+    <JFXButton id="registerButton" fx:id="register_button" disable="true" layoutX="245.0" layoutY="317.0" onAction="#register" prefHeight="40.0" prefWidth="85.0" text="Register" />
+
+    <ImageView fitHeight="149.0" fitWidth="400.0">
+        <Image url="@../image/shape.png" />
+      <effect>
+          <ColorAdjust brightness="-0.08" contrast="0.23" hue="-0.66" saturation="-0.24" />
+      </effect>
+    </ImageView>
+    <ImageView fitHeight="149.0" fitWidth="400.0" layoutY="357.0" rotate="180.0">
+        <Image url="@../image/shape.png" />
+      <effect>
+          <ColorAdjust brightness="-0.08" contrast="0.23" hue="-0.66" saturation="-0.24" />
+      </effect>
+    </ImageView>
+   <Label fx:id="close_btn" layoutX="8.0" layoutY="14.0" onMouseClicked="#close_app" prefHeight="18.0" prefWidth="12.0">
+      <graphic>
+         <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" size="15.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.5" />
+      </graphic>
+   </Label>
+   <Label id="min_btn" layoutX="27.0" layoutY="14.0" onMouseClicked="#minimize_app">
+      <graphic>
+         <FontAwesomeIconView fill="WHITE" glyphName="MINUS" size="15.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.5" />
+      </graphic>
+   </Label>
+</AnchorPane>

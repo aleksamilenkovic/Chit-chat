@@ -1,0 +1,31 @@
+.button{
+    -fx-background-radius: 20px;
+	-fx-background-color:#437db2;
+	-fx-font-family: System  ;
+	-fx-font-size: 14px;
+	-fx-font-weight: bold;
+	-fx-text-fill: white;
+}
+.button:hover, .button:focused{
+	-fx-background-color: #f00000;
+	-fx-opacity:0.5;
+}
+#username:focused{
+	 -fx-text-font-size:18px;
+	color: gray;
+}
+.text-field, .password-field{
+	-fx-alignment: center;
+	-fx-font-family: System Italic ;
+	-fx-font-size: 14px;
+	-fx-text-fill: #437db2;
+}
+.text-field:focused, .password-field:focused{
+
+}
+#close_btn:hover{
+	 -fx-background-color: #d15650;
+ }
+#min_btn:hover{
+	-fx-background-color: #d15650;
+}

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="620.0" maxWidth="1040.0" prefHeight="620.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.controllers.MenuController">
+    <center>
+        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+            <children>
+                <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" pannable="true" prefHeight="496.0" vbarPolicy="ALWAYS" vmin="1.0" vvalue="1.0" VBox.vgrow="ALWAYS">
+                    <content>
+                        <ListView fx:id="chatPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E1E0E0;">
+                     <effect>
+                        <ColorAdjust brightness="-0.17" contrast="-0.02" saturation="-0.02" />
+                     </effect></ListView>
+                    </content>
+                </ScrollPane>
+                <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="100.0" VBox.vgrow="NEVER">
+                    <children>
+                        <TextArea fx:id="messageBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="100.0" nodeOrientation="LEFT_TO_RIGHT" onKeyPressed="#sendMethod" prefHeight="16.0" prefWidth="698.0" promptText="Enter message.Message..." scaleShape="false" HBox.hgrow="ALWAYS">
+                            <font>
+                                <Font name="SansSerif Regular" size="14.0" />
+                            </font>
+                        </TextArea>
+                        <Button fx:id="buttonSend" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#sendButtonAction" prefHeight="43.0" prefWidth="140.0" scaleShape="false" text="Send" textAlignment="CENTER" HBox.hgrow="NEVER" />
+                        <Button fx:id="recordBtn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false">
+                            <graphic>
+                                <ImageView fx:id="microphoneImageView" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../image/microphone.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic></Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+    <left>
+        <VBox maxHeight="1.7976931348623157E308" prefHeight="448.0" prefWidth="109.0" style="-fx-background-color: #437db2;" BorderPane.alignment="CENTER">
+            <children>
+            <Line endX="100.0" startX="-100.0" stroke="#aeaeae" strokeWidth="2.0" />
+                <ListView fx:id="userList" focusTraversable="false" maxHeight="1.7976931348623157E308" prefHeight="685.0" prefWidth="202.0" style="-fx-border-image-width: 0; -fx-background-color: #437db2;" stylesheets="@../style/menuStyle.css">
+                   
+                </ListView>
+            </children>
+        </VBox>
+    </left>
+    <top>
+        <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="75.0" prefWidth="1040.0" style="-fx-background-color: #437db2;" BorderPane.alignment="CENTER">
+            <right>
+                <HBox prefHeight="24.0" prefWidth="30.0" stylesheets="@../style/menuStyle.css" BorderPane.alignment="CENTER">
+                    <children>
+                        <ImageView fitHeight="22.0" fitWidth="21.0" onMousePressed="#closeApplication" pickOnBounds="true" preserveRatio="true" styleClass="button">
+                            <image>
+                                <Image url="@../image/close_normal.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets right="30.0" top="30.0" />
+                            </HBox.margin>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </ImageView>
+                    </children>
+                </HBox>
+            </right>
+            <left>
+                <HBox prefWidth="259.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <ImageView fx:id="userImageView" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../image/default.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets left="10.0" top="10.0" />
+                            </HBox.margin>
+                        </ImageView>
+                        <VBox>
+                            <HBox.margin>
+                                <Insets left="10.0" top="30.0" />
+                            </HBox.margin>
+                            <children>
+                                <Label fx:id="usernameLabel" text="Username" textFill="#fa6648">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+
+                            </children>
+                        </VBox>
+                  <FontAwesomeIconView fill="#fa6648" glyphName="PLUS_CIRCLE" onMousePressed="#add" size="25.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <HBox.margin>
+                        <Insets left="25.0" top="45.0" />
+                     </HBox.margin></FontAwesomeIconView>
+                    </children></HBox>
+            </left>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+        </BorderPane>
+    </top>
+    <rotationAxis>
+        <Point3D />
+    </rotationAxis>
+</BorderPane>
